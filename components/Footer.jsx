@@ -1,0 +1,5 @@
+import Icon from './ui/Icon';import {SITE,FOOT} from '@/data/site';
+export default function Footer(){const s=[['instagram','Instagram',SITE.instagram.url],['tiktok','TikTok',SITE.tiktok.url],['facebook','Facebook',SITE.facebook.url]].filter(x=>x[2]);
+return(<footer className="border-t border-line px-4 pb-24 pt-12 text-center"><b className="text-2xl font-black">{SITE.name}</b><p className="mt-1 text-sm font-bold text-brand">{FOOT.role}</p><p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-mute">{FOOT.text}</p>
+<ul className="mt-5 flex justify-center gap-3">{s.map(([i,n,u])=><li key={n}><a href={u} target="_blank" rel="noopener noreferrer me" aria-label={n} className="grid h-11 w-11 place-items-center rounded-full border border-line transition duration-300 hover:-translate-y-1 hover:border-brand hover:text-brand"><Icon n={i}/></a></li>)}</ul>
+<p className="mt-8 text-[11px] tracking-widest text-mute" dir="ltr">© {new Date().getFullYear()} ZIAD MAHMOUD. ALL RIGHTS RESERVED.</p></footer>)}

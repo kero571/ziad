@@ -1,0 +1,1 @@
+export default function manifest(){return{name:'زياد محمود — Ziad Mahmoud',short_name:'زياد محمود',lang:'ar',dir:'rtl',start_url:'/',display:'standalone',background_color:'#0a0a0a',theme_color:'#0a0a0a'}}

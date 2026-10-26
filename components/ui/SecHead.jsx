@@ -1,0 +1,1 @@
+export default function SecHead({id,label,title,sub,center=true}){return(<div className={`reveal mb-9 ${center?'text-center':''}`}><p className="label mb-3" dir="ltr">{label}</p><h2 id={id} className="text-3xl font-black leading-tight md:text-5xl">{title}</h2>{sub&&<p className={`mt-3 text-mute ${center?'mx-auto':''} max-w-xl`}>{sub}</p>}</div>)}

@@ -1,0 +1,5 @@
+import Icon from './ui/Icon';import SecHead from './ui/SecHead';import {BOOKING as b,SITE,wa} from '@/data/site';
+export default function Booking(){const rows=[['instagram','Instagram',SITE.instagram],['tiktok','TikTok',SITE.tiktok],['facebook','Facebook',SITE.facebook]];
+return(<section id="booking" aria-labelledby="booking-h" className="mx-auto max-w-2xl px-4 py-14 md:py-20"><SecHead id="booking-h" label={b.label} title={b.title} sub={b.sub}/>
+<a href={wa(b.msg)} rel="noopener" className="reveal btn btn-brand w-full !py-4 text-base"><Icon n="whatsapp"/>{b.cta}</a>
+<ul className="mt-5 grid gap-3">{rows.map(([i,n,s])=><li key={n} className="reveal"><a {...(s.url?{href:s.url,target:'_blank',rel:'noopener noreferrer me'}:{})} className="card flex items-center justify-between gap-3 p-4 transition duration-300 hover:border-brand/50"><span className="flex items-center gap-3 font-bold"><span className="grid h-10 w-10 place-items-center rounded-xl bg-brand/10 text-brand"><Icon n={i}/></span>{n}</span><span className="text-sm text-mute" dir="ltr">{s.handle}</span></a></li>)}</ul></section>)}
