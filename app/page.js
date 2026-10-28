@@ -15,12 +15,12 @@ export default function Page() {
       <Header />
       <main>
         <Hero />
-        <Intro />
+        {/* <Intro /> */}
         <Work />
+        <Commercial />
         <Services />
         <Packages />
         <Care />
-        <Commercial />
         <Booking />
       </main>
       <Footer />

@@ -15,7 +15,10 @@ export const SITE = {
     handle: "@BattootCinematic",
     url: "https://www.tiktok.com/@battout4?_r=1&_t=ZS-9AsfOUAU3ue",
   },
-  facebook: { handle: "Ziad Mahmoud", url: "https://www.facebook.com/share/1KBU8KomHc/" }, // ← حط رابط صفحة الفيسبوك لو عايز الأيقونة تفتح الصفحة
+  facebook: {
+    handle: "Ziad Mahmoud",
+    url: "https://www.facebook.com/share/1KBU8KomHc/",
+  }, // ← حط رابط صفحة الفيسبوك لو عايز الأيقونة تفتح الصفحة
   title:
     "زياد محمود | مصور ومخرج أفراح سينمائي — Wedding Photography & Cinematic",
   description:
@@ -60,7 +63,7 @@ export const HERO = {
   pillPlace: "مصر",
   stats: [
     { v: "4K", l: "جودة سينمائية" },
-    { v: "6", plus: 1, l: "سنين خبرة" },
+    { v: "7", plus: 1, l: "سنين خبرة" },
     { v: "120", plus: 1, l: "فرح تم تصويره" },
   ],
   cta1: "احجز ميعادك",
@@ -77,33 +80,49 @@ export const INTRO = {
   text: "من أول التفاصيل الصغيرة... لحد اللحظة اللي الكل بيستناها.",
   chips: ["تصوير فوتوغرافي", "فيديو سينمائي", "ريلز وكوفيرات"],
 };
+const pad = (i) => String(i).padStart(2, "0");
+const range = (n) => Array.from({ length: n }, (_, i) => i + 1);
+const vids = (id, title, n, ext) =>
+  range(n).map((i) => ({
+    src: `/videos/${id}/${i}.${ext}`,
+    poster: `/posters/${id}/${i}.webp`,
+    title: `${title} ${i}`,
+  }));
 export const WORK = {
   label: "SELECTED WORK",
   title: "لحظات من شغلي",
   sub: "لغة بصرية مبنية على الإحساس والحركة والتفاصيل الأنيقة.",
-  photos: [
-    { img: "/images/work-1.jpg", title: "تفاصيل الفستان", sub: "لقطات قريبة" },
-    { img: "/images/work-2.jpg", title: "نورا و يوسف", sub: "سيشن سينمائي" },
-    { img: "/images/work-3.jpg", title: "غروب الشمس", sub: "سيشن خارجي" },
-    { img: "/images/work-4.jpg", title: "الرقصة الأولى", sub: "الحفلة" },
-  ],
-  videos: [
+  initial: 4,
+  tabs: [
     {
-      poster: "/images/reel-1.jpg",
-      src: "/videos/teaser-1.mp4",
-      tag: "TEASER • 00:38",
-      title: "فيديو تيزر الفرح",
-      sub: "لقطات سينمائية",
+      id: "wedding",
+      label: "أفراح",
+      videos: vids("wedding", "فيديو فرح", 7, "mov"),
     },
     {
-      poster: "/images/reel-2.jpg",
-      src: "/videos/reel-1.mp4",
-      tag: "REEL • 00:45",
-      title: "ريلز يوم الفرح",
-      sub: "جيمبال وموسيقى",
+      id: "fashion",
+      label: "فاشون",
+      videos: vids("fashion", "فيديو فاشون", 6, "mp4"),
+    },
+    {
+      id: "event",
+      label: "إيفنتس",
+      videos: vids("event", "فيديو إيفنت", 3, "mp4"),
     },
   ],
-  more: "شوف المزيد على إنستجرام",
+  more: "عرض المزيد",
+};
+
+export const GALLERY = {
+  label: "PHOTOGRAPHY",
+  title: "معرض الصور",
+  sub: "لقطات مختارة من جلسات التصوير والأفراح والفاشون.",
+  photos: range(76).map((i) => ({
+    img: `/images/photos/${i}.webp`,
+    alt: `صورة ${i} من أعمال زياد محمود`,
+  })),
+  cta: "احجز جلسة تصوير",
+  msg: "أهلاً زياد، عايز أستفسر عن حجز جلسة تصوير.",
 };
 export const SERVICES = {
   label: "SERVICES",

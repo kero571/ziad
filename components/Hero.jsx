@@ -53,7 +53,7 @@ export default function Hero() {
         <p className="label" dir="ltr">
           {h.label}
         </p>
-        <h1 className="text-[clamp(1.9rem,6svh,3.3rem)] font-black leading-[1.2] lg:text-[clamp(2.6rem,7.5svh,4.6rem)]">
+        <h1 className="text-[clamp(1.5rem,6svh,3.3rem)] font-black leading-[1.2] lg:text-[clamp(2.6rem,7.5svh,4.6rem)]">
           {h.title} <span className="text-brand">{h.accent}</span>
         </h1>
         <p className="-mt-1 text-mute lg:text-lg">{h.sub}</p>
@@ -70,7 +70,7 @@ export default function Hero() {
         </ul>
         <div className="flex gap-3">
           <a
-            href={wa(h.msg)}
+            href="#booking"
             rel="noopener"
             className="btn btn-brand flex-1 !px-3"
           >
