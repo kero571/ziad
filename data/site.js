@@ -1,11 +1,7 @@
 export const SITE = {
   name: "زياد محمود",
   en: "Ziad Mahmoud",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? "https://" + process.env.VERCEL_PROJECT_PRODUCTION_URL
-      : "http://localhost:3000"),
+  url:"https://ziad-mahmoud.vercel.app",
   whatsapp: "201116727480",
   instagram: {
     handle: "@ZiadMahmoud",
