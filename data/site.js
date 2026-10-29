@@ -116,6 +116,7 @@ export const WORK = {
 export const GALLERY = {
   label: "PHOTOGRAPHY",
   title: "معرض الصور",
+  open: "افتح الألبوم",
   sub: "لقطات مختارة من جلسات التصوير والأفراح والفاشون.",
   photos: range(76).map((i) => ({
     img: `/images/photos/${i}.webp`,
